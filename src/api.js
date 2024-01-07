@@ -8,7 +8,7 @@ export async function clipBoardAPI(prompt) {
     },
     body: form,
   });
-  console.log(response);
+  console.log("Remaining API Credits: " + [...response.headers][2][1]);
   console.log(
     "Got " +
       response.status +
