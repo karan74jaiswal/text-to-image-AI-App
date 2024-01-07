@@ -1,5 +1,4 @@
 import { Button } from "./Button";
-import { Logo } from "./Logo";
 
 export function Navbar({ showSearchPage, handleSearchPage, image }) {
   const handleDownload = function () {
@@ -39,9 +38,7 @@ export function Navbar({ showSearchPage, handleSearchPage, image }) {
             Download
           </Button>
         </>
-      ) : (
-        <Logo />
-      )}
+      ) : null}
     </nav>
   );
 }

@@ -41,7 +41,7 @@ nav {
 .btn {
   border: none;
   outline: none;
-  color: #fff;
+  color: #000000;
   /* padding: 12px 20px; */
   border-radius: 0.75rem;
   font-size: 16px;
@@ -52,7 +52,7 @@ nav {
 .btnBack,
 .btnDownload {
   padding: 12px 20px;
-  background-color: rgb(28 96 246);
+  background-color: rgb(255, 255, 255);
 }
 
 .btnDownload {
@@ -66,7 +66,7 @@ nav {
 
 .retryBtn {
   padding: 12px 20px;
-  background-color: rgb(28 96 246);
+  background-color: rgb(255, 255, 255);
 }
 
 main {
@@ -140,4 +140,9 @@ form {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.message img {
+  width: 100px;
+  height: 100px;
 }
