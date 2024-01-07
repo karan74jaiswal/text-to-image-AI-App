@@ -12,8 +12,6 @@ export async function clipBoardAPI(prompt) {
   console.log("Got " + response.status + " with " + response.statusText);
   const buffer = await response.arrayBuffer();
   const imageBlob = new Blob([buffer], { type: "image/png" });
-  console.log(imageBlob);
   const imageUrl = URL.createObjectURL(imageBlob);
-  console.log(imageUrl);
   return imageUrl;
 }

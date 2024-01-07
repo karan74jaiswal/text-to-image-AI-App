@@ -11,7 +11,6 @@ export function Main({ showSearchPage, handleSearchPage, image, setImage }) {
     e.preventDefault();
     if (!prompt) return;
     const newImageURL = await clipBoardAPI(prompt);
-    console.log(newImageURL);
     setImage(newImageURL);
   }
   return (
