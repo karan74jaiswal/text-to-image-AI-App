@@ -22,7 +22,8 @@
     "dev": "concurrently \"npm start\" \"npm run start-server\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start-netlify": "npm run build && node server/server.js"
   },
   "eslintConfig": {
     "extends": [

@@ -1,7 +1,7 @@
 export async function clipBoardAPI(prompt) {
   const {
     result: [imageURL],
-  } = await fetch(`http://localhost:3001/api/convert`, {
+  } = await fetch(`/api/convert`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

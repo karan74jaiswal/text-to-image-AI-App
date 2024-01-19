@@ -5,7 +5,7 @@ const Replicate = require("replicate");
 const cors = require("cors");
 const app = express();
 
-const port = process.env.SERVER_PORT;
+const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
