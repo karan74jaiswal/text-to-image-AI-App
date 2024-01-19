@@ -3,19 +3,39 @@ import { clipBoardAPI } from "./api";
 import { ImageSection } from "./ImageSection";
 import { Message } from "./Message";
 import { Button } from "./Button";
+import { RotatingLines } from "react-loader-spinner";
 
 export function Main({ showSearchPage, handleSearchPage, image, setImage }) {
   const [prompt, setPrompt] = useState("");
-
+  const [isLoading, setIsLoading] = useState(false);
   async function handleSubmit(e) {
     e.preventDefault();
+    setIsLoading(true);
     if (!prompt) return;
     const newImageURL = await clipBoardAPI(prompt);
     setImage(newImageURL);
+    setIsLoading(false);
   }
+
   return (
     <main>
-      {!showSearchPage ? <Message /> : <ImageSection image={image} />}
+      {!showSearchPage ? (
+        <Message />
+      ) : !isLoading ? (
+        <ImageSection image={image} />
+      ) : (
+        <div className="loader">
+          <RotatingLines
+            visible={true}
+            height="96"
+            width="96"
+            strokeColor="grey"
+            strokeWidth="5"
+            animationDuration="0.75"
+            ariaLabel="rotating-lines-loading"
+          />
+        </div>
+      )}
       <section>
         <form onSubmit={handleSubmit}>
           <input

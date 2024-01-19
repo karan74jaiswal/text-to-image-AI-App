@@ -1,23 +1,22 @@
 import { Button } from "./Button";
 
-export function Navbar({ showSearchPage, handleSearchPage, image }) {
-  const handleDownload = function () {
+export function Navbar({ showSearchPage, image, reset }) {
+  const handleDownload = async function () {
     if (!image || image === "sample.jpg") return;
+    const response = await fetch(image);
+    const blob = await response.blob();
+    const blobUrl = URL.createObjectURL(blob);
     const link = document.createElement("a");
-    link.href = image;
+    link.href = blobUrl;
     link.download = "generated_image.png";
     link.click();
   };
+
   return (
     <nav className={showSearchPage ? "searchNav" : "normal"}>
       {showSearchPage ? (
         <>
-          <Button
-            className="btnBack show"
-            onClick={() => {
-              handleSearchPage(false);
-            }}
-          >{`< Back`}</Button>
+          <Button className="btnBack show" onClick={reset}>{`< Back`}</Button>
           <Button
             className="btnDownload show"
             onClick={handleDownload}
