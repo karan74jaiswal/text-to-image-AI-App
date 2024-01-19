@@ -1,4 +1,5 @@
 export async function clipBoardAPI(prompt) {
+  console.log(prompt);
   const {
     result: [imageURL],
   } = await fetch(`/api/convert`, {

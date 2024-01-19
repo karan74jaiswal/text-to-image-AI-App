@@ -1,4 +1,3 @@
-// server.js
 require("dotenv").config();
 const express = require("express");
 const Replicate = require("replicate");
@@ -7,7 +6,10 @@ const app = express();
 
 const port = process.env.PORT || 3001;
 
-app.use(cors());
+const corsOptions = {
+  methods: "GET,POST,OPTIONS",
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.post("/api/convert", async (req, res) => {
@@ -24,7 +26,7 @@ app.post("/api/convert", async (req, res) => {
         },
       }
     );
-    // You might want to process 'output' and send a specific part of it to the client
+
     res.json({ result: output });
   } catch (error) {
     console.error("Error:", error);
