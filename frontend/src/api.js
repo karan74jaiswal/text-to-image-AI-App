@@ -3,7 +3,7 @@ export async function clipBoardAPI(prompt) {
   const {
     result: [imageURL],
   } = await fetch(
-    `https://text-to-image-ai-app-backend.vercel.app/api/convert`,
+    `http://sdxlv1test-env.eba-ktgw7t88.ap-south-1.elasticbeanstalk.com/api/convert`,
     {
       method: "POST",
       headers: {
