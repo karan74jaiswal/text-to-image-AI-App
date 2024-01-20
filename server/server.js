@@ -4,12 +4,9 @@ const Replicate = require("replicate");
 const cors = require("cors");
 const app = express();
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 5000;
 
-const corsOptions = {
-  methods: "GET,POST,OPTIONS",
-};
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 
 app.post("/api/convert", async (req, res) => {
