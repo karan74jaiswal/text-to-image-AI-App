@@ -3,7 +3,7 @@ export async function clipBoardAPI(prompt) {
   const {
     result: [imageURL],
   } = await fetch(
-    `http://sdxlv1test-env.eba-ktgw7t88.ap-south-1.elasticbeanstalk.com/api/convert`,
+    `https://midy-ai-sdxl-replicate-backend-server.vercel.app/api/convert`,
     {
       method: "POST",
       headers: {
